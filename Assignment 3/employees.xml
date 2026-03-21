@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="employees.xsl"?>
+
+<!DOCTYPE employees SYSTEM "employees.dtd">
+
+<employees xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="employees.xsd">
+
+    <employee>
+        <id>101</id>
+        <name>Fulcurm</name>
+        <department>Engineering</department>
+        <position>Software Engineer</position>
+        <salary>75000</salary>
+    </employee>
+
+    <employee>
+        <id>102</id>
+        <name>Fishbed</name>
+        <department>HR</department>
+        <position>HR Manager</position>
+        <salary>68000</salary>
+    </employee>
+
+    <employee>
+        <id>103</id>
+        <name>Flanker</name>
+        <department>Marketing</department>
+        <position>Marketing Executive</position>
+        <salary>50000</salary>
+    </employee>
+
+</employees>
