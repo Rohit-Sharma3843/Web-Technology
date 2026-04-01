@@ -1,0 +1,16 @@
+<div class="form-container">
+    <h2>Login</h2>
+    <form name="loginForm" novalidate ng-submit="message='Login attempted!'">
+        <input type="text" ng-model="user.username" placeholder="Username" required>
+        <span ng-show="loginForm.$submitted && !user.username">*Required</span><br>
+
+        <input type="password" ng-model="user.password" placeholder="Password" required>
+        <span ng-show="loginForm.$submitted && !user.password">*Required</span><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p style="color:green;" ng-if="message">{{message}}</p>
+
+    <a href="#!/register">Don't have an account? Register</a>
+</div>

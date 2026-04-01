@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Banking App EJB</title>
+</head>
+<body>
+<h1>Banking App - EJB</h1>
+<label>Amount:</label>
+<input type="number" id="amount" step="0.01"><br>
+<button onclick="performAction('deposit')">Deposit</button>
+<button onclick="performAction('withdraw')">Withdraw</button>
+<button onclick="performAction('balance')">Check Balance</button>
+<div id="result"></div>
+
+<script>
+function performAction(action) {
+    let amount = document.getElementById("amount").value;
+    let url = "bank?action=" + action;
+    if (action !== 'balance') url += "&amount=" + amount;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) throw new Error('HTTP error ' + response.status);
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById("result").innerHTML = data.replace(/\n/g, "<br>");
+        })
+        .catch(err => {
+            document.getElementById("result").innerHTML = "Error: " + err;
+        });
+}
+</script>
+</body>
+</html>
